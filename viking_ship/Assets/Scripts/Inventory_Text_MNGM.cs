@@ -10,13 +10,7 @@ public class Inventory_Text_MNGM : MonoBehaviour
     public PLAYER_INFO user;
     public int Item_ID;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    /* 아이템 ID에 맞는 아이템명과 수량을 텍스트 오브젝트에 적습니다. */
     void Update()
     {
         text.text = user.items[Item_ID].name + " : " + user.items[Item_ID].value;

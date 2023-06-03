@@ -15,18 +15,7 @@ public class TELEPORT : MonoBehaviour
 
     public GameObject user;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    /* 포탈들을 리스트에 담아두고, n번째 포탈로 플레이어를 이동시킵니다. */
     public void teleport_to_place(int n)
     {
         user.transform.position = portals[n].place.transform.position;

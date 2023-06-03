@@ -8,19 +8,19 @@ public class PORTALMNGM : MonoBehaviour
     public Material[] Mat = new Material[2];
     public bool Activation;
 
-    // Start is called before the first frame update
+    /* 시작 시 포탈을 비활성화합니다. */
     void Start()
     {
         Activation = false;
         ColorManager();
     }
 
-    // Update is called once per frame
     void Update()
     {
         ColorManager();
     }
 
+    /* 포탈의 활성화 상태(Activation 변수)에 따라 포탈의 색을 다르게 표시합니다. */
     public void ColorManager()
     {
         if (Activation == false)
@@ -33,6 +33,7 @@ public class PORTALMNGM : MonoBehaviour
         }
     }
 
+    /* 다른 물체(플레이어, 투사체 등)과 접촉하면 포탈 활성화 */
     private void OnTriggerStay(Collider other)
 
     {

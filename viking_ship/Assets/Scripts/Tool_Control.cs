@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class Tool_Control : MonoBehaviour
 {
-    // Start is called before the first frame update
     public GameObject Axe;
     public GameObject Hammer;
     public GameObject Knife;
     public GameObject Hand;
 
+    /* 게임 시작 시 맨손으로 시작합니다. */
     void Start()
     {
         Tool_Change(4);
     }
 
+    /* 함수의 매개변수가 1이라면 도끼, 2라면 망치, 3이라면 나이프, 4라면 맨손입니다. */
     public void Tool_Change(int Tool_Num)
     {
         

@@ -8,15 +8,10 @@ public class Button_Control : MonoBehaviour
     public PORTALMNGM portal;
     public Button button;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
+        /* 포탈이 활성화 상태라면 버튼의 색을 흰색으로 하고 버튼을 활성화합니다. */
+
         ColorBlock colorBlock = button.colors;
         if (portal.Activation == true)
         {
@@ -24,7 +19,7 @@ public class Button_Control : MonoBehaviour
             colorBlock.normalColor = new Color(250, 250, 250, 1);
             button.colors = colorBlock;
         }
-        else
+        else // 비활성화 상태라면 원래 색을 유지합니다.
         {
             button.GetComponent<Button>().interactable = false;
         }

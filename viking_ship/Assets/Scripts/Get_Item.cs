@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,17 +6,17 @@ using UnityEngine;
 public class Get_Item : MonoBehaviour
 {
     public PLAYER_INFO user;
-    int Item_Num;
+    public string Item_Name;
+    public int Item_ID;
+    private Vector3 m_LastPosition;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Item_ID != 1 && Item_ID != 2 && Item_ID != 3)
+            Get_With_Hand();
+    }
+    public void Get_With_Hand()
+    {
+        Debug.Log("입력대기중이지르~");
     }
 }

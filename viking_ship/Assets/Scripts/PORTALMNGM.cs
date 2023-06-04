@@ -35,7 +35,6 @@ public class PORTALMNGM : MonoBehaviour
 
     /* 다른 물체(플레이어, 투사체 등)과 접촉하면 포탈 활성화 */
     private void OnTriggerStay(Collider other)
-
     {
         Activation = true;
     }

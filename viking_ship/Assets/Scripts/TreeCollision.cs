@@ -19,11 +19,12 @@ public class TreeCollision : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)//충돌발생시
     {
-        float attackPower = weaponPower.getPower();
+        //태그가 weapon임을 확인
         if (collision.collider.gameObject.CompareTag("Weapon")) 
         {
+            float attackPower = weaponPower.getPower();
             treeHP -= attackPower;
             Debug.Log("cut tree"+treeHP);
             if (treeHP <= 0) 
@@ -31,6 +32,7 @@ public class TreeCollision : MonoBehaviour
                 ContactPoint contactPoint = collision.GetContact(0);
                 angle = contactPoint.normal;    
                 tree.transform.rotation = Quaternion.Euler(angle*30);
+                //공격받은 각도로 넘어지도록 각도 조정
                 Destroy(tree, 10.0f);
             }
         }

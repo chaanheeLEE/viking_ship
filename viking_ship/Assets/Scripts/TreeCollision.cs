@@ -8,6 +8,7 @@ public class TreeCollision : MonoBehaviour
     public GameObject tree;
     public float treeHP;
     private Vector3 angle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,11 +30,12 @@ public class TreeCollision : MonoBehaviour
             Debug.Log("cut tree"+treeHP);
             if (treeHP <= 0) 
             {
+                tree.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
                 ContactPoint contactPoint = collision.GetContact(0);
                 angle = contactPoint.normal;    
-                tree.transform.rotation = Quaternion.Euler(angle*30);
+                tree.transform.rotation = Quaternion.Euler(angle*25);
                 //공격받은 각도로 넘어지도록 각도 조정
-                Destroy(tree, 10.0f);
+                Destroy(tree, 15.0f);
             }
         }
     }

@@ -7,6 +7,7 @@ public class TreeCollision : MonoBehaviour
     private WeaponPower weaponPower;
     public GameObject tree;
     public float treeHP;
+    private Vector3 angle;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,10 @@ public class TreeCollision : MonoBehaviour
             Debug.Log("cut tree"+treeHP);
             if (treeHP <= 0) 
             {
-                Destroy(tree, 1.0f);
+                ContactPoint contactPoint = collision.GetContact(0);
+                angle = contactPoint.normal;    
+                tree.transform.rotation = Quaternion.Euler(angle*30);
+                Destroy(tree, 10.0f);
             }
         }
     }

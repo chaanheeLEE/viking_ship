@@ -8,11 +8,11 @@ public class ShipMaking : MonoBehaviour
     public GameObject mast; //µÀ
     public GameObject oar;  //³ë
 
-    public Material mat0; // »À´ë
-    public Material mat1; // ¹Ù´Ú
-    public Material mat2; // ³»ºÎ
-    public Material mat3; // µÀ´ë
-    public Material mat4; // ¹æÆÐ
+    public Material bone; // »À´ë
+    public Material floor; // ¹Ù´Ú
+    public Material interior; // ³»ºÎ
+    public Material rope; // ÁÙ
+    public Material deco; // ¹æÆÐ
 
     // Start is called before the first frame update
     private void Start()
@@ -23,12 +23,12 @@ public class ShipMaking : MonoBehaviour
     {
         Material[] mat = ship.GetComponent<MeshRenderer>().materials;
         if (true) {
-            mat[0] = mat0;
-            mat[1] = mat1;
+            mat[0] = bone;
+            mat[1] = floor;
             if (true) {
-                mat[2] = mat2;
-                mat[3] = mat3;
-                mat[4] = mat4;
+                mat[2] = interior;
+                mat[3] = rope;
+                mat[4] = deco;
                 mast.SetActive(true);
                 oar.SetActive(true);
             }

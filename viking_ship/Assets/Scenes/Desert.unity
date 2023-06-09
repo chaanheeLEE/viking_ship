@@ -5406,7 +5406,7 @@ GameObject:
   - component: {fileID: 874959420}
   m_Layer: 0
   m_Name: Camera Offset
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9303,7 +9303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2082831617555776721, guid: 3af956640595c6e4cb9436f0f4545ffd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -96.6
+      value: -136.6
       objectReference: {fileID: 0}
     - target: {fileID: 2082831617555776721, guid: 3af956640595c6e4cb9436f0f4545ffd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9311,7 +9311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2082831617555776721, guid: 3af956640595c6e4cb9436f0f4545ffd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -42.9
+      value: -118.4
       objectReference: {fileID: 0}
     - target: {fileID: 2082831617555776721, guid: 3af956640595c6e4cb9436f0f4545ffd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9345,6 +9345,22 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7865203316099467781, guid: 3af956640595c6e4cb9436f0f4545ffd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.41210455
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865203316099467781, guid: 3af956640595c6e4cb9436f0f4545ffd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7787086
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865203316099467781, guid: 3af956640595c6e4cb9436f0f4545ffd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.34638003
+      objectReference: {fileID: 0}
+    - target: {fileID: 7865203316099467781, guid: 3af956640595c6e4cb9436f0f4545ffd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.32218587
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3af956640595c6e4cb9436f0f4545ffd, type: 3}
 --- !u!4 &1629422948 stripped
@@ -9368,6 +9384,64 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1629422951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621939262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f4db820fd2c9994fb90e0ef6858a6d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_eType: 0
+  Target: {fileID: 0}
+  m_fSpeed: 5
+  m_fAngleSpeed: 5
+  m_fRayDist: 5
+--- !u!95 &1629422952
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621939262}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: c702044e8b7b7de4d96c5af2d585d4d4, type: 3}
+  m_Controller: {fileID: 9100000, guid: 4a792283629c9894fbfc8ceb23fedacf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!111 &1629422953
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621939262}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 7400000, guid: 6cbc60cf3b8c62549a0f0d2d003b6d50, type: 2}
+  - {fileID: 7400000, guid: 8573bcd50d913844991255b0926cb830, type: 2}
+  - {fileID: 7400000, guid: 23585cff95de3854a80aeac383e62037, type: 2}
+  - {fileID: 7400000, guid: ef0716b898c5b7146bfaf8dd755b9f1a, type: 2}
+  - {fileID: 7400000, guid: 184f72c813edef04fa0d4b2bc77beb83, type: 2}
+  - {fileID: 7400000, guid: 07e809b29b003a54f8743f984e705407, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1661678177
 GameObject:
   m_ObjectHideFlags: 0

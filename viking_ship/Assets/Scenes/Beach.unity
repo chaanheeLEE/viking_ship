@@ -383,15 +383,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175844732}
-  m_LocalRotation: {x: -0, y: 0.3462369, z: -0, w: 0.93814707}
-  m_LocalPosition: {x: 15.16, y: 12.269, z: -21.520573}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.8, y: 20.9, z: -128.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 874959420}
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 40.515, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &190266140
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3762,11 +3762,11 @@ MonoBehaviour:
   ship: {fileID: 1032045178}
   mast: {fileID: 713329228}
   oar: {fileID: 576882822}
-  mat0: {fileID: 2100000, guid: 29a2e882180c14e46a230d8c35d650a4, type: 2}
-  mat1: {fileID: 2100000, guid: 7b3affcc8791f5945ab8e8a280752d9a, type: 2}
-  mat2: {fileID: 2100000, guid: a397a6845fd3e1349a53be4ec33c1aad, type: 2}
-  mat3: {fileID: 2100000, guid: c05c4fbe689cdd94a8e2041d0a6619c5, type: 2}
-  mat4: {fileID: 2100000, guid: 3f05702116b81ab4fa3dadc88d14d3a9, type: 2}
+  bone: {fileID: 2100000, guid: 29a2e882180c14e46a230d8c35d650a4, type: 2}
+  floor: {fileID: 2100000, guid: 7b3affcc8791f5945ab8e8a280752d9a, type: 2}
+  interior: {fileID: 2100000, guid: a397a6845fd3e1349a53be4ec33c1aad, type: 2}
+  rope: {fileID: 2100000, guid: c05c4fbe689cdd94a8e2041d0a6619c5, type: 2}
+  deco: {fileID: 2100000, guid: 3f05702116b81ab4fa3dadc88d14d3a9, type: 2}
 --- !u!4 &1047371307 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4162486761845184, guid: 8732d563a511d834e823ac895b8a4004, type: 3}

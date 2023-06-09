@@ -13,6 +13,7 @@ public class Tool_Action : MonoBehaviour
     public AudioClip clip_w;
     public AudioClip clip_s;
     public AudioClip clip_g;
+    public Chest_List chest;
 
 
     /* 도구 종류와 아이템 정보가 일치하면 인벤토리의 아이템 수 + 1 */
@@ -28,6 +29,8 @@ public class Tool_Action : MonoBehaviour
         float speed = (((this.gameObject.transform.position - m_LastPosition).magnitude) / Time.deltaTime);
         m_LastPosition = this.gameObject.transform.position;
 
+        //Debug.Log(collision.gameObject.name + ", " + item.Name + ", 충돌 ( "+ speed +" )");
+        
         if (speed > 5)
         {
             HapticCapabilities capabilities;
@@ -45,9 +48,12 @@ public class Tool_Action : MonoBehaviour
                     Debug.Log("진동 2");
                     xr.SendHapticImpulse(0, 0.25f, 0.25f);
                 }
-
             switch (component.Item_Num)
             {
+                case 0:
+                    int i = collision.gameObject.GetComponent<Chest_Info>().Gem_Num;
+                    chest.chests[i].SendMessage("Open");
+                    break;
                 case 1:
                     audio.clip = clip_w;
                     audio.Play();

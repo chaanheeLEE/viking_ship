@@ -4,8 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Tree
-  - Weapon
+  - Quest_Window
   layers:
   - Default
   - TransparentFX

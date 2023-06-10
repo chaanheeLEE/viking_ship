@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Quest_Window
   - Weapon
+  - Monster
   layers:
   - Default
   - TransparentFX

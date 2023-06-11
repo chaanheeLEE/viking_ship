@@ -5,9 +5,10 @@ using UnityEngine;
 public class Attack_Box : MonoBehaviour
 {
     private int damage;
-
+    
     private void OnCollisionStay(Collision collision)
     {
+        Debug.Log("Ãæµ¹!");
         damage = transform.parent.GetComponent<Attack>().Damage;
 
         if(collision.gameObject.tag == "enemy"){

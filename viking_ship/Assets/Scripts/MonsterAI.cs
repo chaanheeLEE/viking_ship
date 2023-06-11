@@ -112,7 +112,7 @@ public class MonsterAI : MonoBehaviour
             yield return StartCoroutine(CancelableWait(0.5f));
         }
     }
-    
+
     IEnumerator ATTACK()
     {
         var curAnimStateInfo = anim.GetCurrentAnimatorStateInfo(0);
@@ -137,7 +137,7 @@ public class MonsterAI : MonoBehaviour
             // 이 대기 시간을 이용해 공격 간격을 조절할 수 있음.         
             yield return StartCoroutine(CancelableWait(curAnimStateInfo.length));
     }
-    
+
 
     IEnumerator KILLED()
     {
@@ -154,7 +154,7 @@ public class MonsterAI : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         if (state == State.KILLED) return;
-        if (other.tag == "Player") 
+        if (other.tag == "Player")
         {
             // Sphere Collider 가 Player 를 감지하면      
             target = other.transform;
@@ -185,12 +185,12 @@ public class MonsterAI : MonoBehaviour
             cancelWait = true;
             ChangeState(State.KILLED);
         }
-        else 
+        else
         {
             anim.Play("Damage", -1, 0);
             Debug.Log("spider" + HP);
         }
-            
+
     }
 
     public void attackPlyaer()

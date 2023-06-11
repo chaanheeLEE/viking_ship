@@ -28,7 +28,7 @@ public class Attack : MonoBehaviour
     {
         Is_CoolTime = false;
         transform.GetChild(0).gameObject.SetActive(false);
-        range.SetActive(false);
+        range.SetActive(true);
     }
 
     public void Attack_()

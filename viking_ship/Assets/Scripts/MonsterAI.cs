@@ -11,7 +11,7 @@ public class MonsterAI : MonoBehaviour
 
     public float HP = 1000.0f;
     public float lostDistance;
-
+    public ParticleSystem particle;
     enum State
     {
         IDLE,
@@ -112,7 +112,7 @@ public class MonsterAI : MonoBehaviour
             yield return StartCoroutine(CancelableWait(0.5f));
         }
     }
-
+    
     IEnumerator ATTACK()
     {
         var curAnimStateInfo = anim.GetCurrentAnimatorStateInfo(0);
@@ -123,6 +123,7 @@ public class MonsterAI : MonoBehaviour
         yield return new WaitUntil(() => anim.GetCurrentAnimatorStateInfo(0).IsName("Damage") == false);
 
         anim.Play("Attack1", -1, 0);
+        particle.Play();
         attackPlyaer();
 
         // 거리가 멀어지면
@@ -150,7 +151,7 @@ public class MonsterAI : MonoBehaviour
         state = newState;
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerStay(SphereCollider other)
     {
         if (state == State.KILLED) return;
         if (other.tag == "Player") 

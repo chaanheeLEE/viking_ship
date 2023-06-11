@@ -6,7 +6,9 @@ TagManager:
   tags:
   - Quest_Window
   - Weapon
-  - Monster
+  - Tree
+  - Skill_Range
+  - enemy
   layers:
   - Default
   - TransparentFX

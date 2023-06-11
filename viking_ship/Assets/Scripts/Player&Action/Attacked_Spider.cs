@@ -6,13 +6,25 @@ public class Attacked_Spider : MonoBehaviour
 {
     public Material[] material = new Material[2];
     private bool delay = false;
+    public MonsterAI spider;
+    public Attack attack;
+    
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+        if (collision.collider.gameObject.CompareTag("Weapon")) 
+        {
+            spider.GetDamage(attack.Damage);
+            Attacked(attack.Damage);
+        }
+    }
     public void Attacked(int damage)
     {
         if (delay == false)
         {
             StartCoroutine("Delay");
             StartCoroutine("Mat");
-            Debug.Log("공격당함! 데미지 : " + damage);
+            Debug.Log("공격당함! 데미지: " + damage);
         }
     }
 

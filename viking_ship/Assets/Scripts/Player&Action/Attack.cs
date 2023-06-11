@@ -19,7 +19,7 @@ public class Attack : MonoBehaviour
     public AudioClip clip1;
     public AudioClip clip2;
     public AudioClip clip3;
-    public int Damage;
+    public int Damage = 5;
 
     private bool Is_CoolTime;
 

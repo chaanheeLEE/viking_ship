@@ -17,7 +17,8 @@ public class MonsterAI : MonoBehaviour
         IDLE,
         CHASE,
         ATTACK,
-        KILLED
+        KILLED,
+        DAMAGED
     }
 
     State state;
@@ -135,15 +136,31 @@ public class MonsterAI : MonoBehaviour
         else
             // 공격 animation 길이 만큼 대기
             // 이 대기 시간을 이용해 공격 간격을 조절할 수 있음.         
-            yield return StartCoroutine(CancelableWait(curAnimStateInfo.length));
+            yield return StartCoroutine(CancelableWait(curAnimStateInfo.length*2f));
     }
 
 
     IEnumerator KILLED()
     {
         anim.Play("Death", -1, 0);
-        Destroy(this, 10.0f);
+        Destroy(this.gameObject, 10.0f);
         yield return null;
+    }
+    IEnumerator DAMAGED()
+    {
+        var curAnimStateInfo = anim.GetCurrentAnimatorStateInfo(0);
+
+        anim.Play("Damage", -1, 0);
+        Debug.Log("spider" + HP);
+        if (nmAgent.remainingDistance > nmAgent.stoppingDistance)
+        {
+            // StateMachine을 추적으로 변경
+            ChangeState(State.CHASE);
+        }
+        else
+            // 피격 animation 길이 만큼 대기
+            // 이 대기 시간을 이용해 공격 간격을 조절할 수 있음.         
+            yield return StartCoroutine(CancelableWait(curAnimStateInfo.length * 2f));
     }
 
     void ChangeState(State newState)
@@ -187,8 +204,11 @@ public class MonsterAI : MonoBehaviour
         }
         else
         {
-            anim.Play("Damage", -1, 0);
-            Debug.Log("spider" + HP);
+            if (state == State.DAMAGED) return;
+            else
+            { 
+                ChangeState(State.DAMAGED); 
+            }
         }
 
     }

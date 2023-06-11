@@ -8,7 +8,6 @@ public class Attack_Box : MonoBehaviour
     
     private void OnCollisionStay(Collision collision)
     {
-        Debug.Log("Ãæµ¹!");
         damage = transform.parent.GetComponent<Attack>().Damage;
 
         if(collision.gameObject.tag == "enemy"){

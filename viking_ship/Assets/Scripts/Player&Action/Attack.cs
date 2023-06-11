@@ -19,16 +19,15 @@ public class Attack : MonoBehaviour
     public AudioClip clip1;
     public AudioClip clip2;
     public AudioClip clip3;
-
-
     public int Damage;
+
     private bool Is_CoolTime;
 
     void Start()
     {
         Is_CoolTime = false;
         transform.GetChild(0).gameObject.SetActive(false);
-        range.SetActive(true);
+        range.SetActive(false);
     }
 
     public void Attack_()
@@ -42,7 +41,7 @@ public class Attack : MonoBehaviour
             Damage = Damage + 5;
         if (Damage == 20)
             Damage += 5;
-
+        
         if(Damage >= 10 && Is_CoolTime == false && this.gameObject.active == true)
             StartCoroutine("Skill_Shot");
     }

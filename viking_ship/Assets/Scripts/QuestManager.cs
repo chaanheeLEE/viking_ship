@@ -73,7 +73,7 @@ public class QuestManager : MonoBehaviour
     public void quest4Text()
     {   
         // 보석 두 개가 활성화 되어있으면 퀘스트 활성화
-        if (stoneManager.stone1_activation == true && stoneManager.stone2_activation == true)
+        if (stoneManager.stone1.activation == true && stoneManager.stone2.activation == true)
             talkmanager.quest4Active = true;
 
         if (talkmanager.quest4Active == true)
@@ -87,7 +87,7 @@ public class QuestManager : MonoBehaviour
     public void quest5Text()
     {
         // 보석 세 개가 활성화 되어있으면 퀘스트 활성화
-        if (stoneManager.stone1_activation == true && stoneManager.stone2_activation == true && stoneManager.stone3_activation == true)
+        if (stoneManager.stone1.activation == true && stoneManager.stone2.activation == true && stoneManager.stone3.activation == true)
             talkmanager.quest5Active = true;
 
         if (talkmanager.quest5Active == true)

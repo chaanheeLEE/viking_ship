@@ -6,7 +6,7 @@ using UnityEngine;
 public class Stone_In_Inventory : MonoBehaviour
 {
     public bool activation;
-    public Material[] Mat = new Material[2];
+    public Material[] Mat = new Material[2]; // stone on/off 마테리얼
 
     void Start()
     {

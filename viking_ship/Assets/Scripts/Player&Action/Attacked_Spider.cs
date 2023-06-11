@@ -18,9 +18,9 @@ public class Attacked_Spider : MonoBehaviour
 
     IEnumerator Mat()
     {
-            transform.GetChild(7).gameObject.GetComponent<SkinnedMeshRenderer>().material = material[1];
+            transform.GetChild(1).gameObject.GetComponent<SkinnedMeshRenderer>().material = material[1];
             yield return new WaitForSeconds(0.3f);
-            transform.GetChild(7).gameObject.GetComponent<SkinnedMeshRenderer>().material = material[0];
+            transform.GetChild(1).gameObject.GetComponent<SkinnedMeshRenderer>().material = material[0];
     }
 
     IEnumerator Delay()

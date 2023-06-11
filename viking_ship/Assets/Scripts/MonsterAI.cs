@@ -151,7 +151,7 @@ public class MonsterAI : MonoBehaviour
         state = newState;
     }
 
-    private void OnTriggerStay(SphereCollider other)
+    private void OnTriggerStay(Collider other)
     {
         if (state == State.KILLED) return;
         if (other.tag == "Player") 

@@ -167,8 +167,8 @@ public class MonsterAI : MonoBehaviour
     {
         state = newState;
     }
-
-    private void OnTriggerStay(Collider other)
+    
+    private void OnTriggerEnter(Collider other)
     {
         if (state == State.KILLED) return;
         if (other.tag == "Player")

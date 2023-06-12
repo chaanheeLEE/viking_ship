@@ -64,7 +64,7 @@ public class Attack : MonoBehaviour
             if (capabilities.supportsImpulse)
             {
                 Debug.Log("진동 1");
-                xr.SendHapticImpulse(0, 0.25f, 0.25f);
+                xr.SendHapticImpulse(0, 0.6f, 0.6f);
             }
 
         xr = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
@@ -72,7 +72,7 @@ public class Attack : MonoBehaviour
             if (capabilities.supportsImpulse)
             {
                 Debug.Log("진동 2");
-                xr.SendHapticImpulse(0, 0.25f, 0.25f);
+                xr.SendHapticImpulse(0, 0.6f, 0.6f);
             }
 
         yield return new WaitForSeconds(0.5f);

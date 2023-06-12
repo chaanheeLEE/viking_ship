@@ -8,6 +8,7 @@ public class TalkManger : MonoBehaviour
     public GameObject saraGemBox;
     public Inventory_Text_MNGM inventoryGrassManager;
     public Inventory_Text_MNGM inventoryRopeManager;
+    public GameObject enemy;
 
     public bool quest1Active = false;
     public bool quest2Active = false;
@@ -38,6 +39,8 @@ public class TalkManger : MonoBehaviour
     public int magician_num = 0;
     public int carpenter_num = 0;
     public int carpenterQuest_num = 0;
+
+    EnemyActive enemyActive;
 
     // 대장장이 talk
     public void balcksmithText()
@@ -124,6 +127,7 @@ public class TalkManger : MonoBehaviour
             {
                 carpenterQuest_num = 0;
                 // 대화 완료후 바이킹 군단 쳐들어오는 트리거 발동
+                enemy.SetActive(true);
             }
                 
         }

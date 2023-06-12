@@ -5,18 +5,20 @@ using UnityEngine;
 public class EnemyActive : MonoBehaviour
 {
     public GameObject enemy;
+    public GameObject chest;
     // Start is called before the first frame update
     void Start()
     {
-        if (true) //퀘스트 시작조건
-        {
-            enemy.SetActive(true);
-        }
+        chest.SetActive(false);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (enemy.transform.childCount == 1)
+        {
+            chest.SetActive(true);
+        }
     }
 }

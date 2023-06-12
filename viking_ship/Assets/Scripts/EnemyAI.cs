@@ -142,7 +142,7 @@ public class EnemyAI : MonoBehaviour
     IEnumerator KILLED()
     {
         anim.Play("Death", -1, 0);
-        Destroy(this.gameObject, 10.0f);
+        Destroy(this.gameObject, 4.0f);
         yield return null;
     }
     IEnumerator DAMAGED()

@@ -21,11 +21,12 @@ public class IntroManager : MonoBehaviour
     [SerializeField] RawImage intro10 = null;
     [SerializeField] RawImage intro11 = null;
     [SerializeField] RawImage intro12 = null;
+    [SerializeField] RawImage intro13 = null;
 
     void Start()
     {
         StartCoroutine(FadeTextToFullAlpha(1.0f, intro1, intro2, intro3, intro4, intro5, intro6, intro7, intro8, intro9, intro10, intro11
-            , intro12));
+            , intro12, intro13));
     }
 
     void Update()
@@ -33,17 +34,17 @@ public class IntroManager : MonoBehaviour
     }
 
     public IEnumerator FadeTextToFullAlpha(float t, RawImage intro1, RawImage intro2, RawImage intro3, RawImage intro4, RawImage intro5, RawImage intro6
-        , RawImage intro7, RawImage intro8, RawImage intro9, RawImage intro10, RawImage intro11, RawImage intro12)
+        , RawImage intro7, RawImage intro8, RawImage intro9, RawImage intro10, RawImage intro11, RawImage intro12, RawImage intro13)
     {
-        RawImage[] arr = { intro1, intro2, intro3, intro4, intro5, intro6, intro7, intro8, intro9, intro10, intro11, intro12};
+        RawImage[] arr = { intro1, intro2, intro3, intro4, intro5, intro6, intro7, intro8, intro9, intro10, intro11, intro12, intro13 };
 
-        for (int i=0; i<12; i++)
+        for (int i=0; i<13; i++)
         {
             arr[i].color = new Color(arr[i].color.r, arr[i].color.g, arr[i].color.b, 0);
         }
 
-        // intro1 ~ intro15 까지 순차적으로 화면에 띄움
-        for (int i=0; i<12; i++)
+        // intro1 ~ intro14 까지 순차적으로 화면에 띄움
+        for (int i=0; i<13; i++)
         {
             while (arr[i].color.a < 4.0f)
             {

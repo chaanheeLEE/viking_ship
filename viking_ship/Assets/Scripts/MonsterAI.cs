@@ -13,6 +13,7 @@ public class MonsterAI : MonoBehaviour
     public int attackPower = 10;
     public float lostDistance;
     public ParticleSystem particle;
+    public GameObject chest;
     enum State
     {
         IDLE,
@@ -28,6 +29,7 @@ public class MonsterAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        chest.SetActive(false);
         anim = GetComponent<Animator>();
         nmAgent = GetComponent<NavMeshAgent>();
 
@@ -143,6 +145,7 @@ public class MonsterAI : MonoBehaviour
 
     IEnumerator KILLED()
     {
+        chest.SetActive(true);
         anim.Play("Death", -1, 0);
         Destroy(this.gameObject, 10.0f);
         yield return null;

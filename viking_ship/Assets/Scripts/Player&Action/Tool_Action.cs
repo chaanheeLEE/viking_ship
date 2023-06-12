@@ -73,7 +73,7 @@ public class Tool_Action : MonoBehaviour
                             if (component.Name == "돌" && item.Name == "망치")
                             {
                                 user.items[1].value++;
-                                collision.gameObject.GetComponent<TreeCollision>().treeHP -= 10;
+                                collision.gameObject.GetComponent<stone_and_grass>().treeHP -= 10;
                             }
                             break;
                         case 3:
@@ -81,7 +81,7 @@ public class Tool_Action : MonoBehaviour
                             audio.Play();
                             if (component.Name == "풀" && item.Name == "나이프")
                             {
-                                collision.gameObject.GetComponent<TreeCollision>().treeHP -= 10;
+                                collision.gameObject.GetComponent<stone_and_grass>().treeHP -= 10;
                                 user.items[2].value++;
                             }
                             break;

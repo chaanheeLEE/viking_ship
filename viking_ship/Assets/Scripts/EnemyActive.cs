@@ -11,7 +11,6 @@ public class EnemyActive : MonoBehaviour
         if (true) //퀘스트 시작조건
         {
             enemy.SetActive(true);
-            this.GetComponentInChildren<GameObject>().SetActive(true);
         }
     }
 

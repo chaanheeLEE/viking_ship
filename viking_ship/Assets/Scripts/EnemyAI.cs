@@ -6,7 +6,6 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     Transform target;
-    public Transform entrance;
     NavMeshAgent nmAgent;
     Animator anim;
 
@@ -30,8 +29,7 @@ public class EnemyAI : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         nmAgent = GetComponent<NavMeshAgent>();
-        target = entrance;
-        state = State.CHASE;
+        state = State.IDLE;
         StartCoroutine(StateMachine());
     }
 
@@ -109,6 +107,7 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
+            nmAgent.isStopped = false;
             // Walk 애니메이션의 한 사이클 동안 대기
             //yield return new WaitForSeconds(0.5f);
             yield return StartCoroutine(CancelableWait(0.5f));
@@ -168,7 +167,7 @@ public class EnemyAI : MonoBehaviour
         state = newState;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (state == State.KILLED) return;
         if (other.tag == "Player")

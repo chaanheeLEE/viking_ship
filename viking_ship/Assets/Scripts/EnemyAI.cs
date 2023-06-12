@@ -150,7 +150,7 @@ public class EnemyAI : MonoBehaviour
         var curAnimStateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
         anim.Play("Damage", -1, 0);
-        Debug.Log("spider" + HP);
+        Debug.Log("viking" + HP);
         if (nmAgent.remainingDistance > nmAgent.stoppingDistance)
         {
             // StateMachine을 추적으로 변경

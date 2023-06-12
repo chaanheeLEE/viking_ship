@@ -6,13 +6,13 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     Transform target;
+    public Transform entrance;
     NavMeshAgent nmAgent;
     Animator anim;
 
-    public float HP = 1000.0f;
+    public float HP = 100f;
     public int attackPower = 10;
     public float lostDistance;
-    public ParticleSystem particle;
     enum State
     {
         IDLE,
@@ -30,8 +30,8 @@ public class EnemyAI : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         nmAgent = GetComponent<NavMeshAgent>();
-
-        state = State.IDLE;
+        target = entrance;
+        state = State.CHASE;
         StartCoroutine(StateMachine());
     }
 
@@ -125,7 +125,6 @@ public class EnemyAI : MonoBehaviour
         yield return new WaitUntil(() => anim.GetCurrentAnimatorStateInfo(0).IsName("Damage") == false);
 
         anim.Play("Attack1", -1, 0);
-        particle.Play();
         attackPlyaer();
 
         // 거리가 멀어지면

@@ -23,7 +23,7 @@ public class Attacked_Enemy : MonoBehaviour
         if (delay == false)
         {
             StartCoroutine("Delay");
-            StartCoroutine("Mat");
+            //StartCoroutine("Mat");
             Debug.Log("공격당함! 데미지: " + damage);
         }
     }

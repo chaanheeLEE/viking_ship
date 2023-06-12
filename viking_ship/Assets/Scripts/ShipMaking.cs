@@ -17,14 +17,18 @@ public class ShipMaking : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        makeShip();
+        if (true) //퀘스트 시작조건
+        {
+            makeShip();
+        }
+        
     }
     private void makeShip()
     {
         Material[] mat = ship.GetComponent<MeshRenderer>().materials;
-        if (true) {
+        if (true) { //퀘스트 조건
             mat[0] = bone;
-            mat[1] = floor;
+            mat[1] = floor;}
             if (true) {
                 mat[2] = interior;
                 mat[3] = rope;
@@ -32,7 +36,7 @@ public class ShipMaking : MonoBehaviour
                 mast.SetActive(true);
                 oar.SetActive(true);
             }
-        }
-        ship.GetComponent<MeshRenderer>().materials = mat;
+     
+            ship.GetComponent<MeshRenderer>().materials = mat;
     }
 }

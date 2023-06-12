@@ -10,6 +10,7 @@ public class MonsterAI : MonoBehaviour
     Animator anim;
 
     public float HP = 1000.0f;
+    public int attackPower = 10;
     public float lostDistance;
     public ParticleSystem particle;
     enum State
@@ -167,8 +168,8 @@ public class MonsterAI : MonoBehaviour
     {
         state = newState;
     }
-
-    private void OnTriggerStay(Collider other)
+    
+    private void OnTriggerEnter(Collider other)
     {
         if (state == State.KILLED) return;
         if (other.tag == "Player")
@@ -216,6 +217,6 @@ public class MonsterAI : MonoBehaviour
     public void attackPlyaer()
     {
         if (target == null) return;
-        target.GetComponent<PLAYER_INFO>().GetDamage(10);
+        target.GetComponent<PLAYER_INFO>().GetDamage(attackPower);
     }
 }

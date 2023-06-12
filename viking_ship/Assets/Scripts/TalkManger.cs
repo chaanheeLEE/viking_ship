@@ -29,12 +29,15 @@ public class TalkManger : MonoBehaviour
 
     // 배 만들기 퀘스트 활성화 이후 재단사 talk
     string[] tailorQuestString = new string[] { "밧줄 만드는 건 제 전문이죠.\n풀 5개로 밧줄 1개를 교환할 수 있습니다." };
+    // 퀘스트5 활성화 이후 목수 talk
+    string[] carpenterQuestString = new string[] { "큰일났습니다요.. 용사님!!", "바이킹 녀석들이 다시 쳐들어 오고 있습니다요!!", "부디 저희 마을을 구원해주십시오...!", "저희는 용사님만 믿겠습니다..!!" };
 
     public int balcksmith_num = 0;
     public int tailor_num = 0;
     public int tailorQuest_num = 0;
     public int magician_num = 0;
     public int carpenter_num = 0;
+    public int carpenterQuest_num = 0;
 
     // 대장장이 talk
     public void balcksmithText()
@@ -109,20 +112,39 @@ public class TalkManger : MonoBehaviour
     // 목수 talk
     public void carpenterText()
     {
-        // 목수와 대화해야 퀘스트3 활성화
-        if (carpenter_num < carpenterString.Length)
+        // 퀘스트5 바이킹의 침공 활성화시 목수 대화 변경
+        if (quest5Active == true)
         {
-            carpenter_text.text = carpenterString[carpenter_num];
-            carpenter_num++;
+            if (carpenterQuest_num < carpenterQuestString.Length)
+            {
+                carpenter_text.text = carpenterQuestString[carpenterQuest_num];
+                carpenterQuest_num++;
+            }
+            else 
+            {
+                carpenterQuest_num = 0;
+                // 대화 완료후 바이킹 군단 쳐들어오는 트리거 발동
+            }
+                
         }
+
         else
         {
-            carpenter_num = 0;
-            quest3Active = true;
-            // 재단사 퀘스트3 배만들기 UI 활성화
-            tailor_text.text = tailorQuestString[0];
-            tailor_button_text.text = "교환";
-
+            // 목수와 대화해야 퀘스트3 활성화
+            if (carpenter_num < carpenterString.Length)
+            {
+                carpenter_text.text = carpenterString[carpenter_num];
+                carpenter_num++;
+            }
+            else
+            {
+                carpenter_num = 0;
+                quest3Active = true;
+                // 재단사 퀘스트3 배만들기 UI 활성화
+                tailor_text.text = tailorQuestString[0];
+                tailor_button_text.text = "교환";
+            }
         }
+        
     }
 }

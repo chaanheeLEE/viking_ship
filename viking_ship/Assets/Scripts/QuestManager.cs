@@ -105,7 +105,7 @@ public class QuestManager : MonoBehaviour
     public GameObject ship;
     private void Update()
     {
-        if (inventoryTreeManager.user.items[0].value == 50 && inventoryStoneManager.user.items[1].value == 50 && inventoryRopeManager.user.items[3].value == 10 &&
+        if (inventoryTreeManager.user.items[0].value >= 50 && inventoryStoneManager.user.items[1].value >= 50 && inventoryRopeManager.user.items[3].value >= 10 &&
             stoneManager.stone1.activation == true && stoneManager.stone2.activation == true && stoneManager.stone3.activation == true && stoneManager.stone4.activation == true)
         {
             questFinalActive = true;
